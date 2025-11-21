@@ -1,0 +1,472 @@
+/* simulacion.css - Versión Bracket con mejoras de simulación realista */
+:root {
+    --color-primary: #D32F2F;
+    --color-primary-dark: #B71C1C;
+    --color-secondary: #000000;
+    --color-tertiary: #FFFFFF;
+    --color-light: #F5F5F5;
+    --color-dark: #212121;
+    --text-light: #333333;
+    --text-dark: #FFFFFF;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --color-gold: #FFD700;
+    --color-momentum: #FF6B6B;
+}
+
+/* Animación de carga */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes highlightWin {
+    0% { background-color: rgba(211, 47, 47, 0.1); }
+    50% { background-color: rgba(211, 47, 47, 0.3); }
+    100% { background-color: rgba(211, 47, 47, 0.1); }
+}
+
+/* Contenedor principal */
+.simulacion-container {
+    max-width: 1400px;
+    margin: 8rem auto;
+    padding: 0 1rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Título principal */
+.titulo-simulacion {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de selección de país */
+.seleccion-pais {
+    background-color: var(--color-tertiary);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.seleccion-pais h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.seleccion-pais p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+/* Selector de países */
+.selector-pais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.selector-pais select {
+    padding: 0.8rem 1.2rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--color-light);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.selector-pais select:focus {
+    outline: none;
+    border-color: var(--color-primary-dark);
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.2);
+}
+
+/* Botón de simular */
+.btn-simular {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: bold;
+    margin-top: 2rem;
+    display: block;
+    width: 100%;
+    height: 50px;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.btn-simular:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-simular:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* DISEÑO BRACKET PARA EL DIAGRAMA DE TORNEO */
+.diagrama-torneo {
+    background-color: var(--color-tertiary);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    overflow-x: auto;
+}
+
+.diagrama-torneo h2 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Estructura del torneo estilo bracket */
+.bracket-container {
+    display: flex;
+    justify-content: space-between;
+    min-width: 1200px;
+    position: relative;
+    margin: 2rem 0;
+}
+
+.fase {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+    min-height: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+.fase h3 {
+    text-align: center;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Partidos y conexiones */
+.partidos-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.partido {
+    background-color: var(--color-light);
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 0.8rem;
+    margin: 1rem 0;
+    width: 200px;
+    transition: var(--transition);
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.partido:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.partido.ganador {
+    border-color: var(--color-primary);
+    background-color: #FFFFFF;
+    font-weight: bold;
+    animation: highlightWin 1s ease-in-out;
+}
+
+.partido.equipo-usuario {
+    border: 3px solid var(--color-primary);
+    background-color: #FFFFFF;
+}
+
+/* ====================================
+   NUEVOS ESTILOS PARA SIMULACIÓN MEJORADA
+   ==================================== */
+
+/* Partidos dramáticos (penales o diferencia mínima) */
+.partido-dramatico {
+    border: 3px solid var(--color-gold) !important;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    animation: glow-dramatico 2s ease-in-out infinite;
+}
+
+@keyframes glow-dramatico {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+    }
+}
+
+/* Efecto especial cuando el usuario gana */
+.partido.equipo-usuario.ganador {
+    background: linear-gradient(135deg, rgba(211, 47, 47, 0.05) 0%, rgba(211, 47, 47, 0.15) 100%);
+    border: 3px solid var(--color-primary);
+    animation: victory-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes victory-pulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(211, 47, 47, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(211, 47, 47, 0.8);
+    }
+}
+
+/* Marcador del partido */
+.marcador {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    text-align: center;
+    margin: 8px 0;
+    padding: 6px 10px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+/* Indicador de penales */
+.penales {
+    font-size: 0.75rem;
+    color: var(--color-primary-dark);
+    display: block;
+    margin-top: 3px;
+    font-weight: 600;
+    animation: pulse-penales 1.5s infinite;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@keyframes pulse-penales {
+    0%, 100% { 
+        opacity: 1; 
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+}
+
+/* Indicador de momentum/racha */
+.momentum {
+    display: inline-block;
+    font-size: 0.7rem;
+    color: var(--color-momentum);
+    margin-left: 6px;
+    padding: 2px 6px;
+    background: rgba(255, 107, 107, 0.15);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    font-weight: 600;
+    animation: fire-pulse 2s infinite;
+}
+
+@keyframes fire-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.85;
+    }
+}
+
+/* Líneas conectivas entre fases - ESTILO BRACKET */
+.conexion {
+    position: absolute;
+    background-color: #ccc;
+    z-index: 1;
+}
+
+/* Conexiones horizontales */
+.conexion-horizontal {
+    height: 2px;
+}
+
+/* Conexiones verticales */
+.conexion-vertical {
+    width: 2px;
+}
+
+/* Contenedor de equipos */
+.equipos-partido {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.equipo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.equipo span {
+    flex: 1;
+}
+
+.equipo.ganador {
+    background-color: rgba(211, 47, 47, 0.1);
+    font-weight: bold;
+    color: var(--color-primary);
+    border: 1px solid rgba(211, 47, 47, 0.3);
+}
+
+.vs {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #888;
+    margin: 0.3rem 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.ganador-partido {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed #ccc;
+    font-size: 0.85rem;
+    text-align: center;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* Ganador del torneo */
+.ganador-torneo {
+    background: linear-gradient(135deg, #f9f9f9, #e6e6e6);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 2rem;
+    animation: fadeIn 1s ease-in-out;
+    border: 3px solid var(--color-primary);
+}
+
+.ganador-torneo h2 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.ganador-torneo .ganador-info {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    padding: 1.5rem;
+    border: 3px solid var(--color-primary);
+    border-radius: 8px;
+    background-color: rgba(211, 47, 47, 0.1);
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .bracket-container {
+        min-width: 1000px;
+    }
+    
+    .partido {
+        width: 180px;
+    }
+    
+    .marcador {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .simulacion-container {
+        margin: 8rem auto;
+    }
+    
+    .titulo-simulacion {
+        font-size: 2rem;
+    }
+    
+    .selector-pais {
+        flex-direction: column;
+    }
+    
+    .bracket-container {
+        flex-direction: column;
+        min-width: auto;
+    }
+    
+    .fase {
+        min-height: auto;
+        margin-bottom: 2rem;
+    }
+    
+    .partido {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    .conexion {
+        display: none;
+    }
+    
+    .marcador {
+        font-size: 1rem;
+    }
+    
+    .momentum {
+        font-size: 0.65rem;
+        padding: 1px 4px;
+    }
+    
+    .partido-dramatico {
+        border: 2px solid var(--color-gold) !important;
+    }
+}

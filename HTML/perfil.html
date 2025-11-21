@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Fútbol fantasía</title>
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/PERFIL/perfil.css">
+    <link rel="stylesheet" href="../CSS/PERFIL/logros.css">
+    <link rel="stylesheet" href="../CSS/PERFIL/popUp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="contenedor-navbar">
+            <ul class="navbar-list">
+                <li class="logo"><a href="/"><img src="../IMAGENES/logo.png" alt="Logo"></a></li>
+                <li><a href="/" class="alternative">Inicio</a></li>
+                <li><a href="/torneos" class="alternative">Torneos</a></li>
+                <li><a href="/chats" class="alternative">Chats</a></li>
+                <!-- <li><a href="login.html" class="alternative">Iniciar sesión</a></li> -->
+                <!-- BOTON TEMPORAL DE PERFIL -->
+                <!-- <li><a href="#" class="alternative">Perfil</a></li> -->
+                <li class="menu-hamburguesa">
+                    <button id="hamburger-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+    <main>
+        <section class="perfil">
+            <div class="perfil-container">
+                <div class="banner-container">
+                    <div class="imagen-perfil">
+                        <!-- Imagen dinámica del usuario -->
+                        <img id="user-profile-img" src="../IMAGENES/default-avatar.png" alt="Perfil">
+                    </div>
+                    <div class="nombreUsuario">
+                        <!-- Nombre dinámico del usuario -->
+                        <h1 id="user-username">@Usuario</h1>
+                    </div>
+                </div>
+                <div class="opciones-container">
+                    <div class="opciones-botones">
+                        <button class="boton-opcion activo" data-target="info">Información del perfil</button>
+                        <button class="boton-opcion" data-target="logros">Logros</button>
+                    </div>
+                </div>
+                <div class="infoPerfil-container activo" id="info">
+                    <div class="infoPerfil-content">
+                        <!-- Información dinámica del usuario -->
+                        <p>Nombre: <label id="user-nombre">Cargando...</label></p>
+                        <p>Apellido: <label id="user-apellido">Cargando...</label></p>
+                        <p>Email: <label id="user-email">Cargando...</label></p>
+                        <p>Contraseña: <label for="password">••••••••</label></p>
+                        <p>Género: <label id="user-genero">Cargando...</label></p>
+                        <p>Cumpleaños: <label id="user-cumpleanos">Cargando...</label></p>
+                        <p>Nación seleccionada: <label id="user-pais">Cargando...</label></p>
+                        <p>Logros completados: <label id="user-logros">Cargando...</label></p>
+                    </div>
+                    <button class="boton-editar" id="editar-perfil">Editar perfil</button>
+                    <button class="boton-cerrarSesion" id="cerrar-sesion">Cerrar sesión</button>
+                </div>
+                <div class="logros-container" id="logros">
+                    <div class="logros-content">
+                        <h2>Logros</h2>
+                        <p>Total de logros: <label id="total-logros">Cargando...</label></p>
+                        <div class="logros-grid" id="logros-grid">
+                            <!-- Los logros se cargarán dinámicamente con JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+    <div class="contenedor-footer">
+        <div class="footer-seccion">
+            <h3>Contáctanos</h3>
+            <p><i class="fas fa-envelope"></i> Email: info@fcfm.mx</p>
+            <p><i class="fas fa-phone"></i> Teléfono: +52 (0) 991 123 4567</p>
+            <p><i class="fas fa-map-marker-alt"></i> Dirección: Av. de las Américas, s/n, Col. Centro, Monterrey, Nuevo León, México</p>
+        </div>
+        <div class="footer-seccion">
+            <h3>Redes Sociales</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-seccion">
+            <h3>Acerca de nosotros</h3>
+            <p>Proyecto enfocado para simular el fútbol fantasí de la vida real con la temática del Mundial de Fútbol.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Fútbol fantasía. Todos los derechos reservados.</p>
+    </div>
+    </footer>
+    <script src="../JS/sesion.js"></script>
+    <script src="../JS/hamburguesa.js"></script>
+    <script src="../JS/PERFIL/logrosFront.js"></script>
+    <script src="../JS/PERFIL/perfil.js"></script>
+    <script src="../JS/PERFIL/popUp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

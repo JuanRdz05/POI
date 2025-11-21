@@ -1,0 +1,392 @@
+/* torneo.css */
+:root {
+    --color-primary: #D32F2F;
+    --color-primary-dark: #B71C1C;
+    --color-secondary: #000000;
+    --color-tertiary: #FFFFFF;
+    --color-light: #F5F5F5;
+    --color-dark: #212121;
+    --text-light: #333333;
+    --text-dark: #FFFFFF;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Animación de carga */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contenedor principal */
+.torneo-container {
+    max-width: 1200px;
+    margin: 8rem auto;
+    padding: 0 1rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Título "Forma tu equipo" */
+.titulo-equipo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de la cancha */
+.cancha-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.cancha-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    background: linear-gradient(to bottom, #4CAF50, #388E3C);
+    border: 2px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+/* Líneas de la cancha */
+.cancha-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.circle-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+.line-center {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.area-left, .area-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    height: 300px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.area-left {
+    left: 0;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.area-right {
+    right: 0;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Posiciones de los jugadores */
+.posiciones-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.posicion {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid var(--color-primary);
+    transition: var(--transition);
+    font-weight: bold;
+    color: var(--color-dark);
+    font-size: 0.8rem;
+}
+
+.posicion:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--color-primary);
+}
+
+.posicion.vacia {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px dashed white;
+}
+
+/* Formaciones típicas (4-4-2) */
+.posicion[data-pos="portero"] {
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.posicion[data-pos="defensa1"] {
+    bottom: 120px;
+    left: 25%;
+}
+
+.posicion[data-pos="defensa2"] {
+    bottom: 120px;
+    left: 40%;
+}
+
+.posicion[data-pos="defensa3"] {
+    bottom: 120px;
+    right: 40%;
+}
+
+.posicion[data-pos="defensa4"] {
+    bottom: 120px;
+    right: 25%;
+}
+
+.posicion[data-pos="mediocampo1"] {
+    bottom: 200px;
+    left: 20%;
+}
+
+.posicion[data-pos="mediocampo2"] {
+    bottom: 200px;
+    left: 35%;
+}
+
+.posicion[data-pos="mediocampo3"] {
+    bottom: 200px;
+    right: 35%;
+}
+
+.posicion[data-pos="mediocampo4"] {
+    bottom: 200px;
+    right: 20%;
+}
+
+.posicion[data-pos="delantero1"] {
+    bottom: 280px;
+    left: 35%;
+}
+
+.posicion[data-pos="delantero2"] {
+    bottom: 280px;
+    right: 35%;
+}
+
+/* Información de presupuesto */
+.presupuesto-info {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.presupuesto-info span {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+/* Botón de comenzar torneo */
+.btn-comenzar {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.btn-comenzar:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-comenzar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Modal de selección de jugadores */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow: auto;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: var(--color-light);
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 900px;
+    max-height: 80%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--color-dark);
+}
+
+.close-modal:hover {
+    color: var(--color-primary);
+}
+
+.modal-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 10px;
+}
+
+/* Grid de jugadores */
+.jugadores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.jugador-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+    text-align: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.jugador-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Iniciales del jugador en lugar de imagen */
+.jugador-iniciales {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    border: 2px solid var(--color-primary);
+}
+
+.jugador-nombre {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--color-dark);
+}
+
+.jugador-info {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 3px;
+}
+
+.jugador-precio {
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-top: 5px;
+}
+
+.presupuesto-footer {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .torneo-container {
+        margin: 8rem auto; 
+    }
+    
+    .titulo-equipo {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .cancha-container {
+        height: 400px;
+    }
+    
+    .posicion {
+        width: 40px;
+        height: 40px;
+        font-size: 0.7rem;
+    }
+    
+    .jugadores-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .jugador-iniciales {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+    
+    .presupuesto-info {
+        font-size: 1rem;
+    }
+}

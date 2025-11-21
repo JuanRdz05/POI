@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fútbol fantasía - Torneos</title>
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/TORNEOS/torneos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="contenedor-navbar">
+            <ul class="navbar-list">
+                <li class="logo"><a href="/"><img src="../IMAGENES/logo.png" alt="Logo"></a></li>
+                <li><a href="/" class="alternative">Inicio</a></li>
+                <li><a href="#" class="alternative">Torneos</a></li>
+                <li><a href="/chats" class="alternative">Chats</a></li>
+                <li><a href="/login" class="alternative">Iniciar sesión</a></li>
+                <!-- BOTON TEMPORAL DE PERFIL -->
+                <!-- <li><a href="perfil.html" class="alternative">Perfil</a></li> -->
+                <li class="menu-hamburguesa">
+                    <button id="hamburger-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+
+    <!-- INICIO -->
+    <main>
+    <div class="torneo-container">
+        <h1 class="titulo-equipo">Forma tu equipo</h1>
+        <div class="cancha-section">
+            <div class="presupuesto-info">
+                Presupuesto disponible: <span id="presupuesto-actual">100M</span>
+            </div>
+            
+            <div class="cancha-container">
+                <div class="cancha-lines">
+                    <div class="circle-center"></div>
+                    <div class="line-center"></div>
+                    <div class="area-left"></div>
+                    <div class="area-right"></div>
+                </div>
+                
+                <div class="posiciones-container">
+                    <!-- Portero -->
+                    <div class="posicion vacia" data-pos="portero">P</div>
+                    
+                    <!-- Defensas -->
+                    <div class="posicion vacia" data-pos="defensa1">DF</div>
+                    <div class="posicion vacia" data-pos="defensa2">DF</div>
+                    <div class="posicion vacia" data-pos="defensa3">DF</div>
+                    <div class="posicion vacia" data-pos="defensa4">DF</div>
+                    
+                    <!-- Mediocampistas -->
+                    <div class="posicion vacia" data-pos="mediocampo1">MC</div>
+                    <div class="posicion vacia" data-pos="mediocampo2">MC</div>
+                    <div class="posicion vacia" data-pos="mediocampo3">MC</div>
+                    <div class="posicion vacia" data-pos="mediocampo4">MC</div>
+                    
+                    <!-- Delanteros -->
+                    <div class="posicion vacia" data-pos="delantero1">DL</div>
+                    <div class="posicion vacia" data-pos="delantero2">DL</div>
+                </div>
+            </div>
+            
+            <button id="btn-comenzar" class="btn-comenzar" onclick="location.href='/simulacion'" disabled>Comenzar torneo</button>
+
+            <p>
+    💡      Consejo: Haz clic derecho en cualquier posición para remover un jugador
+            </p>
+
+        </div>
+    </div>
+    
+    <!-- Modal para seleccionar jugadores -->
+    <div id="modal-jugadores" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Selecciona un jugador</h2>
+            <div id="jugadores-grid" class="jugadores-grid">
+                <!-- Los jugadores se cargarán aquí dinámicamente -->
+            </div>
+        </div>
+    </div>
+</main>
+
+    <!-- FOOTER -->
+    <footer>
+    <div class="contenedor-footer">
+        <div class="footer-seccion">
+            <h3>Contáctanos</h3>
+            <p><i class="fas fa-envelope"></i> Email: info@fcfm.mx</p>
+            <p><i class="fas fa-phone"></i> Teléfono: +52 (0) 991 123 4567</p>
+            <p><i class="fas fa-map-marker-alt"></i> Dirección: Av. de las Américas, s/n, Col. Centro, Monterrey, Nuevo León, México</p>
+        </div>
+        <div class="footer-seccion">
+            <h3>Redes Sociales</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-seccion">
+            <h3>Acerca de nosotros</h3>
+            <p>Proyecto enfocado para simular el fútbol fantasí de la vida real con la temática del Mundial de Fútbol.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Fútbol fantasía. Todos los derechos reservados.</p>
+    </div>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../JS/sesion.js"></script>
+    <script src="../JS/hamburguesa.js"></script>
+    <script src="../JS/TORNEOS/torneos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

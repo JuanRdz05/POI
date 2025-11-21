@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Fútbol fantasía</title>
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/REGISTRO/registro.css">
+    <link rel="stylesheet" href="../CSS/REGISTRO/paises.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <!-- INICIO -->
+    <header>
+    <nav>
+        <div class="contenedor-navbar">
+            <ul class="navbar-list">
+                <li class="logo"><a href="/"><img src="../IMAGENES/logo.png" alt="Logo"></a></li>
+                <li><a href="/" class="alternative">Inicio</a></li>
+                <li><a href="/torneos" class="alternative">Torneos</a></li>
+                <li><a href="/chats" class="alternative">Chats</a></li>
+                <li><a href="/login" class="alternative">Iniciar sesión</a></li>
+                <!-- BOTON TEMPORAL DE PERFIL -->
+                <!-- <li><a href="perfil.html" class="alternative">Perfil</a></li> -->
+                <li class="menu-hamburguesa">
+                    <button id="hamburger-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+    <main>
+        <section class="registro">
+            <div class="registro-container">
+                <h1>Registro</h1>
+                <form id="registerForm" action="../../index.php" method="post" enctype="multipart/form-data">
+                    <!-- Campo de la foto -->
+                    <div class="foto-perfil-container">
+                        <label for="foto" class="foto-perfil-label" id="fotoPerfilLabel">
+                            <i class="fa-solid fa-camera"></i>
+                            <span class="foto-perfil-text">Subir foto</span>
+                            <img src="" class="foto-perfil-preview" id="fotoPreview" alt="Vista previa">
+                        </label>
+                        <input type="file" name="fotoPerfil" id="foto" accept="image/png, image/jpeg" class="foto-perfil-input">
+                    </div>
+                    
+                    <!-- Campo de nombre -->
+                    <div class="registro-input">
+                        <div class="input-container">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" name="nombre" placeholder="Nombre" required id="nombre">
+                        </div>
+                    </div>
+                    
+                    <!-- Campo de apellido paterno -->
+                    <div class="registro-input">
+                        <div class="input-container">
+                            <input type="text" name="apellido-paterno" placeholder="Apellido paterno" required id="apellidoPaterno"> 
+                        </div>
+                    </div>
+                    
+                    <!-- Campo de apellido materno -->
+                    <div class="registro-input">
+                        <div class="input-container">
+                            <input type="text" name="apellido-materno" placeholder="Apellido materno" required id="apellidoMaterno">
+                        </div>
+                    </div>
+                    
+                    <!-- Campo de usuario -->
+                    <div class="registro-input">
+                        <div class="input-container">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" name="usuario" placeholder="Usuario" required id="usuario">
+                        </div>
+                    </div>
+                    
+                    <!-- Campo de email -->
+                    <div class="registro-input">
+                        <div class="input-container">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" name="email" placeholder="Email" required id="email">
+                        </div>
+                    </div>
+                    
+                    <!-- Campo de contraseña -->
+                    <div class="registro-input">
+                        <div class="input-container">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" name="contraseña" placeholder="Contraseña" required id="password">
+                            <button type="button" id="togglePassword" class="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!--Campo de genero -->
+                    <div class="registro-input">
+                        <div class="input-container">
+                            <i class="fa-solid fa-venus-mars"></i>
+                            <select name="genero" id="genero" required>
+                                <option value="" disabled selected>Seleccione su genero</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Campo de cumpleaños -->
+                    <div class="registro-input">
+                        <div class="input-container">
+                            <i class="fa-solid fa-cake-candles"></i>
+                            <input type="date" name="cumpleaños" id="cumpleaños" required>
+                        </div>
+                    </div>
+                    <!-- POP UP DE LOS PAISES -->
+                    <!-- <div class="pais-modal" id="paisModal">
+                        <div class="seleccion-pais">
+                            <h2>Seleccione su país para comenzar a jugar</h2>
+                            <p>Puedes cambiara de país si lo deseas en cualquier momento.</p>
+                                <div class="paises">
+                                    <select name="paises" id="paises" required>
+                                        <option value="" disabled selected>Seleccione su país</option>
+                                        <option value="Alemania">Alemania</option>
+                                        <option value="Arabia Saudita">Arabia Saudita</option>
+                                        <option value="Argentina">Argentina</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Bélgica">Bélgica</option>
+                                        <option value="Brasil">Brasil</option>
+                                        <option value="Camerún">Camerún</option>
+                                        <option value="Canadá">Canadá</option>
+                                        <option value="Corea del Sur">Corea del Sur</option>
+                                        <option value="Costa Rica">Costa Rica</option>
+                                        <option value="Croacia">Croacia</option>
+                                        <option value="Dinamarca">Dinamarca</option>
+                                        <option value="Ecuador">Ecuador</option>
+                                        <option value="EEUU">EEUU</option>
+                                        <option value="España">España</option>
+                                        <option value="Francia">Francia</option>
+                                        <option value="Ghana">Ghana</option>
+                                        <option value="Inglaterra">Inglaterra</option>
+                                        <option value="Irán">Irán</option>
+                                        <option value="Japón">Japón</option>
+                                        <option value="Marruecos">Marruecos</option>
+                                        <option value="México">México</option>
+                                        <option value="Países Bajos">Países Bajos</option>
+                                        <option value="Polonia">Polonia</option>
+                                        <option value="Portugal">Portugal</option>
+                                        <option value="Qatar">Qatar</option>
+                                        <option value="Senegal">Senegal</option>
+                                        <option value="Serbia">Serbia</option>
+                                        <option value="Suiza">Suiza</option>
+                                        <option value="Túnez">Túnez</option>
+                                        <option value="Uruguay">Uruguay</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="pais-modal" id="paisModal">
+                            <div class="seleccion-pais">
+                                <h2>Seleccione su país para comenzar a jugar</h2>
+                                <p>Puedes cambiar de país si lo deseas en cualquier momento.</p>
+                                <div class="paises">
+                                    <select name="paises" id="paises" required>
+                                        <option value="" disabled selected>Seleccione su pais</option>
+                                        <!-- Los países se cargarán dinámicamente con JavaScript -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="registrar-boton" type="submit">Registrarse</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+    <div class="contenedor-footer">
+        <div class="footer-seccion">
+            <h3>Contáctanos</h3>
+            <p><i class="fas fa-envelope"></i> Email: info@fcfm.mx</p>
+            <p><i class="fas fa-phone"></i> Teléfono: +52 (0) 991 123 4567</p>
+            <p><i class="fas fa-map-marker-alt"></i> Dirección: Av. de las Américas, s/n, Col. Centro, Monterrey, Nuevo León, México</p>
+        </div>
+        <div class="footer-seccion">
+            <h3>Redes Sociales</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-seccion">
+            <h3>Acerca de nosotros</h3>
+            <p>Proyecto enfocado para simular el fútbol fantasí de la vida real con la temática del Mundial de Fútbol.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Fútbol fantasía. Todos los derechos reservados.</p>
+    </div>
+    </footer>
+    <script src="../JS/hamburguesa.js"></script>
+    <script src="../JS/REGISTRO/cargarPaises.js"></script>
+    <script src="../JS/REGISTRO/fotoPerfil.js"></script>
+    <script src="../JS/REGISTRO/registro.js"></script>
+    <!-- <script src="../JS/REGISTRO/popUp.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

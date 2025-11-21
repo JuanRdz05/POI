@@ -1,0 +1,255 @@
+:root {
+    --color-primary: #D32F2F;
+    --color-primary-dark: #B71C1C;
+    --color-tertiary: #FFFFFF;
+    --color-light: #F5F5F5;
+    --color-dark-gray: #666;
+    --color-gray: #999;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+.foto-perfil-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.foto-perfil-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border: 2px dashed var(--color-gray);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-light);
+}
+
+.foto-perfil-label:hover {
+    border-color: var(--color-primary);
+    background-color: #FEEBE7;
+}
+
+.foto-perfil-label i {
+    font-size: 2rem;
+    color: var(--color-gray);
+    margin-bottom: 0.5rem;
+    transition: var(--transition);
+}
+
+.foto-perfil-label:hover i {
+    color: var(--color-primary);
+}
+
+.foto-perfil-text {
+    font-size: 0.8rem;
+    color: var(--color-gray);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.foto-perfil-label:hover .foto-perfil-text {
+    color: var(--color-primary);
+}
+
+.foto-perfil-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.foto-perfil-input {
+    display: none;
+}
+
+.foto-perfil-label.has-image .foto-perfil-preview {
+    display: block;
+}
+
+.foto-perfil-label.has-image i,
+.foto-perfil-label.has-image .foto-perfil-text {
+    display: none;
+}
+
+
+
+.registro {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    min-height: 80vh;       
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.registro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 2.5rem;
+    background-color: var(--color-tertiary);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin: 2rem auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.registro-input {
+    position: relative;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.registro-input .input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-light);
+    border-radius: 4px;
+    padding: 0.1rem 0.5rem;
+    transition: var(--transition);
+}
+
+.registro-input .input-container:focus-within {
+    background-color: #FEEBE7;
+    color: #222;
+}
+
+.registro-input input,
+.registro-input select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    color: var(--color-dark-gray);
+}
+
+.registro-input input::placeholder {
+    color: var(--color-gray);
+}
+
+.registro-input select:invalid {
+    color: var(--color-gray);
+}
+
+.registro-input i {
+    color: var(--color-gray);
+    font-size: 1rem;
+}
+
+.password-toggle {
+    background: none;
+    border: none;
+    color: var(--color-gray);
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+    transition: var(--transition);
+    margin-left: 0.5rem;
+}
+
+.registrar-boton {
+    background-color: var(--color-primary);
+    color: var(--color-tertiary);
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 2rem;   
+    cursor: pointer;
+    transition: var(--transition);
+    display: block;
+    margin: 1.2rem auto;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.registrar-boton:hover {
+    background-color: var(--color-primary-dark);
+}
+
+#genero
+{
+    cursor: pointer;
+}
+
+/* Estilos específicos para el input de tipo file */
+.registro-input input[type="file"] {
+    padding: 0.75rem 0;
+    cursor: pointer;
+}
+
+.registro-input input[type="file"]::file-selector-button {
+    background-color: var(--color-primary);
+    color: var(--color-tertiary);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-right: 1rem;
+}
+
+.registro-input input[type="file"]::file-selector-button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .registro-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .registro-input {
+        max-width: 100%;
+    }
+}
+
+/* Responsive foto de perfil*/
+@media (max-width: 768px) {
+    .registro-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .registro-input {
+        max-width: 100%;
+    }
+    
+    .foto-perfil-label {
+        width: 100px;
+        height: 100px;
+    }
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fútbol fantasía - Simulación</title>
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/SIMULACION/simulacion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        /* Estilos para la card del país */
+        .pais-usuario-card {
+            background: linear-gradient(135deg, #7c7c7c 0%, #686868 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            color: white;
+        }
+        
+        .pais-bandera {
+            font-size: 80px;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+        
+        .pais-nombre {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .pais-info {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        .sin-pais {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+        }
+        
+        .sin-pais i {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        
+        .sin-pais p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        
+        .btn-ir-perfil {
+            background: white;
+            color: #f5576c;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-ir-perfil:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .loader {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .loader i {
+            font-size: 40px;
+            color: #667eea;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="contenedor-navbar">
+            <ul class="navbar-list">
+                <li class="logo"><a href="/"><img src="../IMAGENES/logo.png" alt="Logo"></a></li>
+                <li><a href="/" class="alternative">Inicio</a></li>
+                <li><a href="/torneos" class="alternative">Torneos</a></li>
+                <li><a href="/chats" class="alternative">Chats</a></li>
+                <li><a href="/login" class="alternative">Iniciar sesión</a></li>
+                <li class="menu-hamburguesa">
+                    <button id="hamburger-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <div class="simulacion-container">
+            <h1 class="titulo-simulacion">Simulación del Mundial</h1>
+            
+            <div class="seleccion-pais">
+                <h2>Tu País</h2>
+                <p>Este es el país que representará a tu equipo en el torneo mundial</p>
+                
+                <!-- Contenedor que mostrará el país del usuario -->
+                <div id="pais-display">
+                    <div class="loader">
+                        <i class="fas fa-spinner"></i>
+                        <p>Cargando información del país...</p>
+                    </div>
+                </div>
+                
+                <button id="btn-simular" class="btn-simular" style="display: none;">Simular Torneo</button>
+            </div>
+            
+            <div id="diagrama-torneo" class="diagrama-torneo">
+                <h2>Diagrama del Torneo</h2>
+                <!-- Aquí se generará el diagrama del torneo -->
+            </div>
+            
+            <div id="ganador-torneo" class="ganador-torneo" style="display: none;">
+                <h2>🏆 Campeón del Mundial 🏆</h2>
+                <div id="info-ganador" class="ganador-info"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+    <div class="contenedor-footer">
+        <div class="footer-seccion">
+            <h3>Contáctanos</h3>
+            <p><i class="fas fa-envelope"></i> Email: info@fcfm.mx</p>
+            <p><i class="fas fa-phone"></i> Teléfono: +52 (0) 991 123 4567</p>
+            <p><i class="fas fa-map-marker-alt"></i> Dirección: Av. de las Américas, s/n, Col. Centro, Monterrey, Nuevo León, México</p>
+        </div>
+        <div class="footer-seccion">
+            <h3>Redes Sociales</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-seccion">
+            <h3>Acerca de nosotros</h3>
+            <p>Proyecto enfocado para simular el fútbol fantasía de la vida real con la temática del Mundial de Fútbol.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Fútbol fantasía. Todos los derechos reservados.</p>
+    </div>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../JS/sesion.js"></script>
+    <script src="../JS/hamburguesa.js"></script>
+    <script src="../JS/SIMULACION/simulacionFront.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fútbol fantasía - Inicio</title>
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS/INICIO/inicio.css">
+    <link rel="stylesheet" href="CSS/INICIO/cosasHacer.css">
+    <link rel="stylesheet" href="CSS//INICIO/torneo.css">
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="contenedor-navbar">
+            <ul class="navbar-list">
+                <li class="logo"><a href="#"><img src="IMAGENES/logo.png" alt="Logo"></a></li>
+                <li><a href="#" class="alternative">Inicio</a></li>
+                <li><a href="/torneos" class="alternative">Torneos</a></li>
+                <li><a href="/chats" class="alternative">Chats</a></li>
+                <li><a href="/login" class="alternative">Iniciar sesión</a></li>
+                <!-- BOTON TEMPORAL DE PERFIL -->
+                <!-- <li><a href="HTML/perfil.html" class="alternative">Perfil</a></li> -->
+                <li class="menu-hamburguesa">
+                    <button id="hamburger-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+    <main>
+        <!-- INICIO -->
+        <section class="inicio">
+            <div class="banner-container">
+                <img src="IMAGENES/banner.jpg" alt="Banner">
+                <div class="banner-content">
+                    <h1>Fútbol fantasía</h1>
+                    <p>¡Bienvenido a Fútbol fantasía!</p>
+                </div>
+            </div>
+        </section>
+        <!-- COSAS POR HACER -->
+        <section class="CosasPorhacer">
+            <div class="informacionContainer">
+                <h2>¿Qué podemos hacer dentro de la página?</h2>
+                <div class="tarjetas-grid">
+                    <div class="tarjeta" onclick="location.href='HTML/chats.html'">
+                        <div class="imagen-tarjeta">
+                            <img src="IMAGENES/porhacer-1.jpg" alt="Mensajes imagen">
+                        </div>
+                        <div class="informacion-tarjeta">
+                            <h3>¡Comunicación en tiempo real con tus amigos!</h3>
+                            <p>Puedes enviar mensajes a tus amigos y ver si han respondido.</p>
+                        </div>
+                    </div>
+                    <div class="tarjeta" onclick="location.href='HTML/chats.html'">
+                        <div class="imagen-tarjeta">
+                            <img src="IMAGENES/videocall-2.jpg" alt="Videollamada imagen">
+                        </div>
+                        <div class="informacion-tarjeta">
+                            <h3>¡Videollamada en vivo!</h3>
+                            <p>Puedes crear llamadas o videollamadas con tus amigos.</p>
+                        </div>
+                    </div>
+                    <div class="tarjeta" onclick="location.href='HTML/torneos.html'">
+                        <div class="imagen-tarjeta">
+                            <img src="IMAGENES/fantasy-football.jpg" alt="Torneos imagen">
+                        </div>
+                        <div class="informacion-tarjeta">
+                            <h3>¡Participa en el Mundia de Fantasía!</h3>
+                            <p>Participa en emocionantes torneos de fútbol fantasía.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- TORNEOS -->
+        <section class="torneos" onclick="location.href='HTML/torneos.html'">
+            <div class="torneos-container">
+                <div class="imagen-torneo">
+                    <img src="IMAGENES/tournament.jpg" alt="Torneos imagen">
+                </div>
+                <div class="informacion-torneo">
+                    <h2>¡Mundial de Fantasía!</h2><br>
+                    <p>Presiona <a href="HTML/torneos.html">aquí</a>para comenzar.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+    <div class="contenedor-footer">
+        <div class="footer-seccion">
+            <h3>Contáctanos</h3>
+            <p><i class="fas fa-envelope"></i> Email: info@fcfm.mx</p>
+            <p><i class="fas fa-phone"></i> Teléfono: +52 (0) 991 123 4567</p>
+            <p><i class="fas fa-map-marker-alt"></i> Dirección: Av. de las Américas, s/n, Col. Centro, Monterrey, Nuevo León, México</p>
+        </div>
+        <div class="footer-seccion">
+            <h3>Redes Sociales</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-seccion">
+            <h3>Acerca de nosotros</h3>
+            <p>Proyecto enfocado para simular el fútbol fantasí de la vida real con la temática del Mundial de Fútbol.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Fútbol fantasía. Todos los derechos reservados.</p>
+    </div>
+    </footer>
+    <script src="JS/hamburguesa.js"></script>
+    <script src="JS/sesion.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fútbol fantasía - Llamada</title>
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/LLAMADA/llamada.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- ❌ QUITAR sesion.js del head -->
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="contenedor-navbar">
+            <ul class="navbar-list">
+                <li class="logo"><a href="../index.html"><img src="../IMAGENES/logo.png" alt="Logo"></a></li>
+                <li><a href="/" class="alternative">Inicio</a></li>
+                <li><a href="/torneos" class="alternative">Torneos</a></li>
+                <li><a href="/chats" class="alternative">Chats</a></li>
+                <li><a href="/login" class="alternative">Iniciar sesión</a></li>
+                <li class="menu-hamburguesa">
+                    <button id="hamburger-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+<main>
+    <div class="llamada-content">
+        <div class="participantes-container">
+            <!-- Persona que llama -->
+            <div class="participante otro-usuario">
+                <div class="participante-avatar">
+                    <div class="avatar-img">MG</div>
+                    <div class="iconos-estado">
+                        <i class="fas fa-microphone-slash"></i>
+                        <i class="fas fa-video-slash"></i>
+                    </div>
+                </div>
+                <div class="participante-info">
+                    <h3>María García</h3>
+                    <p>Llamando...</p>
+                </div>
+            </div>
+
+            <!-- Usuario actual -->
+            <div class="participante usuario-actual">
+                <div class="participante-avatar">
+                    <div class="avatar-img">YO</div>
+                    <div class="iconos-estado">
+                        <i class="fas fa-microphone-slash" id="miMicrofonoIcono" style="display: none;"></i>
+                        <i class="fas fa-video-slash" id="miCamaraIcono"></i>
+                    </div>
+                </div>
+                <div class="participante-info">
+                    <h3>Tú</h3>
+                    <p>Conectado</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles de llamada -->
+        <div class="controles-llamada">
+            <button class="control-btn mic-btn" id="micBtn">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <!-- 🔥 Botón de cámara HABILITADO -->
+            <button class="control-btn camara-btn" id="camaraBtn">
+                <i class="fas fa-video-slash"></i>
+            </button>
+            <button class="control-btn colgar-btn" id="colgarBtn">
+                <i class="fas fa-phone"></i>
+            </button>
+        </div>
+    </div>
+</main>
+
+    <!-- FOOTER -->
+    <footer>
+    <div class="contenedor-footer">
+        <div class="footer-seccion">
+            <h3>Contáctanos</h3>
+            <p><i class="fas fa-envelope"></i> Email: info@fcfm.mx</p>
+            <p><i class="fas fa-phone"></i> Teléfono: +52 (0) 991 123 4567</p>
+            <p><i class="fas fa-map-marker-alt"></i> Dirección: Av. de las Américas, s/n, Col. Centro, Monterrey, Nuevo León, México</p>
+        </div>
+        <div class="footer-seccion">
+            <h3>Redes Sociales</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-seccion">
+            <h3>Acerca de nosotros</h3>
+            <p>Proyecto enfocado para simular el fútbol fantasía de la vida real con la temática del Mundial de Fútbol.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Fútbol fantasía. Todos los derechos reservados.</p>
+    </div>
+    </footer>
+    
+    <!-- ✅ SCRIPTS AL FINAL DEL BODY -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../JS/sesion.js"></script> <!-- ✅ MOVIDO AQUÍ -->
+    <script src="../JS/hamburguesa.js"></script>
+    <script src="../JS/LLAMADA/callManager.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
