@@ -19,7 +19,7 @@ const estadisticasRoutes = require('./ROUTES/estadisticas');
 const logrosRoutes = require('./ROUTES/logros');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 
 // ✅ CONFIGURACIÓN CORS
 app.use(cors({
