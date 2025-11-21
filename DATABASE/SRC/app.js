@@ -19,7 +19,7 @@ const estadisticasRoutes = require('./ROUTES/estadisticas');
 const logrosRoutes = require('./ROUTES/logros');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // ✅ CONFIGURACIÓN CORS
 app.use(cors({
@@ -274,7 +274,7 @@ app.use((req, res) => {
 });
 
 // ✅ INICIAR SERVIDOR
-server.listen(PORT, '0.0.0.0', () => {
+server.listen(PORT, () => {
     console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
     console.log(`🌐 Listo para Ngrok`);
     console.log(`📡 WebSocket activo en el mismo puerto`);
